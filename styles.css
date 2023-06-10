@@ -1,0 +1,40 @@
+body {
+  background: linear-gradient(
+    180.8deg,
+    rgb(66, 255, 132) -0.8%,
+    rgb(124, 216, 255) 99%
+  );
+}
+
+.search {
+  font-family: "Poltawski Nowy", serif;
+  font-size: 20px;
+  padding: 50px;
+  margin: 0;
+}
+
+h2 .city {
+  font-family: "Poltawski Nowy", serif;
+  font-size: 10px;
+  margin: 0;
+}
+
+p {
+  font-family: "Poltawski Nowy", serif;
+}
+
+.sun {
+  font-size: 120px;
+}
+
+.sunn {
+  font-size: 50px;
+}
+
+.cloudy {
+  font-size: 50px;
+}
+
+.sunny {
+  font-size: 50px;
+}
