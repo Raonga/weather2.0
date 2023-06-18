@@ -55,10 +55,9 @@ function showTemperature(response) {
   ));
 }
 
-function displayCity(newcity) {
+function displayCity(city) {
   let apikey = "0f9184c6bbbd99ef0f03atcoa48342a8";
-  let query = "";
-  let apiurl = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${apikey}&units=imperial`;
+  let apiurl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apikey}&units=imperial`;
   axios.get(apiurl).then(showTemperature);
 }
 
