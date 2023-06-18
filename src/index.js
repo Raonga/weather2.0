@@ -55,7 +55,7 @@ function showTemperature(response) {
   ));
 }
 
-function displayCity(city) {
+function displayCity(newcity) {
   let apikey = "0f9184c6bbbd99ef0f03atcoa48342a8";
   let query = "";
   let apiurl = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${apikey}&units=imperial`;
