@@ -32,8 +32,8 @@ function formatDate(date) {
   let currentYear = now.getFullYear();
   let currentDate = now.getDate();
 
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = `${currentDay}, ${currentDate}, ${currentMonth}, ${currentYear}, ${currentHour}; ${currentMinutes}`;
+  let date = document.querySelector("date");
+  date.innerHTML = `${currentDay}, ${currentDate}, ${currentMonth}, ${currentYear}, ${currentHour}; ${currentMinutes}`;
   return `${currentDay}, ${currentDate}, ${currentMonth}, ${currentYear}, ${currentHour}; ${currentMinutes}`;
 }
 
