@@ -41,7 +41,7 @@ formatDate(new Date());
 
 function showTemperature(response) {
   let newcity = (document.querySelector("#newcity").innerHTML =
-    response.data.name.h1);
+    response.data.name);
   let temperature = (document.querySelector("#temperature").innerHTML =
     Math.round(response.data.main.temp));
   let description = (document.querySelector("#description").innerHTML =
