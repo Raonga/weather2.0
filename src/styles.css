@@ -27,12 +27,12 @@ li {
   list-style: none;
 }
 
-.temperature.active {
+.search-temperature.active {
   color: black;
   cursor: default;
 }
 
-.temperature.hover {
+.search-temperature.hover {
   text-decoration: none;
 }
 
