@@ -27,12 +27,12 @@ li {
   list-style: none;
 }
 
-.unit.active {
+.temperature.active {
   color: black;
   cursor: default;
 }
 
-.unit.hover {
+.temperature.hover {
   text-decoration: none;
 }
 
