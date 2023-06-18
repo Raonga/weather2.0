@@ -54,8 +54,7 @@ function showTemperature(response) {
 function displayCity(city) {
   let Key = "0f9184c6bbbd99ef0f03atcoa48342a8";
   let query = "city";
-  let units = "metric";
-  let url = `https://api.shecodes.io/weather/v1/current?query={query}&key={key}`;
+  let url = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${Key}`;
   axios.get(url).then(showTemperature);
 }
 
@@ -67,11 +66,9 @@ function handleSubmit(event) {
 
 function currentPosition(response) {
   let Key = "0f9184c6bbbd99ef0f03atcoa48342a8";
-  let query = "city";
-  let units = "metric";
   let lon = "Longitude";
   let lat = "Latitude";
-  let url = `https://api.shecodes.io/weather/v1/current?lon={lon}&lat={lat}&key={key}`;
+  let url = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${key}`;
   axios.get(url).then(showTemperature);
 }
 
