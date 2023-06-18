@@ -29,7 +29,7 @@ li {
 
 .search-temperature.active {
   color: black;
-  cursor: default;
+  cursor: none;
 }
 
 .search-temperature.hover {
