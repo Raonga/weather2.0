@@ -27,6 +27,15 @@ li {
   list-style: none;
 }
 
+.unit.active {
+  color: black;
+  cursor: default;
+}
+
+.unit.hover {
+  text-decoration: none;
+}
+
 .sun {
   font-size: 120px;
 }

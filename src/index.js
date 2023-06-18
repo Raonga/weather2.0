@@ -42,8 +42,9 @@ formatDate(new Date());
 function showTemperature(response) {
   let newcity = (document.querySelector("#newcity").innerHTML =
     response.data.name);
+  let celsiusTemperature = response.data.main.temp;
   let temperature = (document.querySelector("#temperature").innerHTML =
-    Math.round(response.data.main.temp));
+    Math.round(celsiusTemperature));
   let description = (document.querySelector("#description").innerHTML =
     response.data.weather[0].main);
   let wind = (document.querySelector("#wind").innerHTML = Math.round(
@@ -78,22 +79,35 @@ function locationTemperature(event) {
   navigator.geolocation.locationTemperature(currentPosition);
 }
 
-function convertToFaherenheit(event) {
+function faherenheitTemperature(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 66;
+  let temperature = document.querySelector("#temperature");
+  celsiusTemperature.classList.remove("active");
+  faherenheitTemperature.classList.add("active");
+  let faherenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(faherenheitTemperature);
 }
 
-function convertToCelsuis(event) {
+function celsiusTemperature(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 19;
+  let temperature = document.querySelector("#temperature");
+  celsiusTemperature.classList.add("active");
+  faherenheitTemperature.classList.remove("active");
+  temperature.innerHTML = Math.round(celsiusTemperature);
 }
+
+let celsiusTemperature = null;
 
 let searchform = document.querySelector("#search-form");
 searchform.addEventListener("submit", handleSubmit);
 
 let currentButton = document.querySelector("#current-location-button");
 currentButton.addEventListener("click", currentPosition);
+
+let faherenheitTemperature = document.querySelector("#faherentheit");
+faherenheitTemperature.addEventListener("click", faherenheitTemperature);
+
+let celsiusTemperature = document.querySelector("#celsius");
+celsiusTemperature.addEventListener("click", celsiusTemperature);
 
 displayCity("New York");
