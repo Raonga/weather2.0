@@ -49,11 +49,15 @@ function showTemperature(response) {
   let wind = (document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   ));
+  let icon = (document.querySelector("#icon").innerHTML = setAttribute(
+    "src",
+    response.data.condition.icon_url
+  ));
 }
 
 function displayCity(city) {
   let apikey = "0f9184c6bbbd99ef0f03atcoa48342a8";
-  let apiurl = `https://api.shecodes.io/weather/v1/current?query=${newcity}&key=${apikey}&units=imperial`;
+  let apiurl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apikey}&units=imperial`;
   axios.get(apiurl).then(showTemperature);
 }
 
