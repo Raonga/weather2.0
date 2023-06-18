@@ -23,6 +23,10 @@ p {
   font-family: "Poltawski Nowy", serif;
 }
 
+li {
+  list-style: none;
+}
+
 .sun {
   font-size: 120px;
 }
