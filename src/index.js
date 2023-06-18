@@ -96,4 +96,4 @@ searchform.addEventListener("submit", handleSubmit);
 let currentButton = document.querySelector("#current-location-button");
 currentButton.addEventListener("click", currentPosition);
 
-displayCity("city");
+displayCity("New York");
