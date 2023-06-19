@@ -82,8 +82,8 @@ function locationTemperature(event) {
 function faherenheitTemperature(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temperature");
-  celsiusTemperature.classList.remove("active");
   faherenheitTemperature.classList.add("active");
+  celsiusTemperature.classList.remove("active");
   let faherenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperature.innerHTML = Math.round(faherenheitTemperature);
 }
