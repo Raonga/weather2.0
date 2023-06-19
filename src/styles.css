@@ -27,12 +27,12 @@ li {
   list-style: none;
 }
 
-.search-temperature.active {
+.search-celsius.active {
   color: black;
   cursor: none;
 }
 
-.search-temperature.hover {
+.search-celsius.hover {
   text-decoration: none;
 }
 
