@@ -32,8 +32,6 @@ function formatDate(date) {
   let currentYear = now.getFullYear();
   let currentDate = now.getDate();
 
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = `${currentDay}, ${currentDate}, ${currentMonth}, ${currentYear}, ${currentHour}; ${currentMinutes}`;
   return `${currentDay}, ${currentDate}, ${currentMonth}, ${currentYear}, ${currentHour}; ${currentMinutes}`;
 }
 
@@ -52,10 +50,14 @@ function showTemperature(response) {
   ));
   let icon = (document.querySelector("#icon").innerHTML = setAttribute(
     "src",
-    response.data.condition.icon_url
+    response.data.condition.icon_url,
+    "alt",
+    response.data.condition.description
   ));
   let humidity = (document.querySelector("#humdity").innerHTML =
     response.data.main.humidity);
+  let Date = (document.querySelector("#Date").innerHTML =
+    response.data.time * 1000);
 }
 
 function displayCity(city) {
