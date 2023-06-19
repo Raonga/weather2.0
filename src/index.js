@@ -54,6 +54,8 @@ function showTemperature(response) {
     "src",
     response.data.condition.icon_url
   ));
+  let humidity = (document.querySelector("#humdity").innerHTML =
+    response.data.main.humidity);
 }
 
 function displayCity(city) {
