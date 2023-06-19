@@ -56,7 +56,7 @@ function showTemperature(response) {
   ));
   let humidity = (document.querySelector("#humdity").innerHTML =
     response.data.main.humidity);
-  let Date = (document.querySelector("#Date").innerHTML =
+  let date = (document.querySelector("#date").innerHTML =
     response.data.time * 1000);
 }
 
