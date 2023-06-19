@@ -46,7 +46,7 @@ function showTemperature(response) {
   let temperature = (document.querySelector("#temperature").innerHTML =
     Math.round(celsiusTemperature));
   let description = (document.querySelector("#description").innerHTML =
-    response.data.weather[0].main);
+    response.data.weather[0].description);
   let wind = (document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   ));
