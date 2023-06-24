@@ -51,7 +51,8 @@ function showTemperature(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src", response.data.condition.icon_url);
   iconElement.setAttribute("alt", response.data.condition.description);
-  document.querySelector("#humdity").innerHTML =
+
+  document.querySelector("#humidity").innerHTML =
     response.data.temperature.humidity;
   document.querySelector("#date").innerHTML = formatDate(
     response.data.time * 1000
