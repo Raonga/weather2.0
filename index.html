@@ -49,52 +49,15 @@
 
         <br />
 
-        <div class="weather-forecast">
+        <div class="weather-forecast" id="forecast">
             <div class="row">
                 <div class="col-2">
-                    <h3 class="forecast-date"> Sat</h3>
-                    <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png" id="icon" />
-                    <p>26&#176 10&#176</p>
-                </div>
-                <div class="col">
-                    <h3 class="title"> Sun</h3>
-                    <i class="fa-thin fa-clouds-sun cloudy"></i>
-                    <p>27&#176 7&#176</p>
-                </div>
-                <div class="col">
-
-                    <h3 class="title"> Mon</h3>
-                    <i class="fa-thin fa-clouds-sun cloudy"></i>
-                    <p>25&#176 7&#176</p>
-                </div>
-                <div class="col">
-
-                    <h3 class="title"> Tues</h3>
-                    <i class="fa-thin fa-clouds-sun cloudy"></i>
-                    <p>24&#176 6&#176</p>
-                </div>
-                <div class="col">
-
-                    <h3 class="title"> Weds</h3>
-                    <i class="fa-thin fa-sun sunny"></i>
-                    <p>22&#176 3&#176</p>
-                </div>
-                <div class="col">
-
-                    <h3 class="title"> Thurs</h3>
-                    <i class="fa-thin fa-sun sunny"></i>
-                    <p>23&#176 2&#176</p>
-                </div>
-                <div class="col">
-
-                    <h3 class="title"> Fri</h3>
-                    <i class="fa-thin fa-sun sunny"></i>
-                    <p>22&#176 2&#176</p>
+                    <div class="forecast-date">${day}</div>
+                    <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png" />
+                    <div class="forecast-temp"> 26&#176 10&#176 </div>
                 </div>
             </div>
         </div>
-
-
     </div>
     <script src="src/index.js"></script>
     <br />

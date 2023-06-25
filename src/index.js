@@ -37,6 +37,25 @@ function formatDate(date) {
 
 formatDate(new Date());
 
+function displayForecast(){
+ let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = '<div class="row">';
+  let days = ["Mon","Tue","Wed","Thu","Fri","Sat"];
+  days.forEach(function(day){
+    forecastHTML = forecastHTML + 
+    '<div class="col-2">
+                    <div class="forecast-date"> ${day} </div>
+                    <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"/>
+                    <div class="forecast-temp"> 26&#176 10&#176 </div>
+                    </div>';
+  
+})
+}
+
+forecastHTML = forecastHTML + '</div>';
+forecastElement.innerHTML = forecastHTML;
+
+
 function showTemperature(response) {
   document.querySelector("#newcity").innerHTML = response.data.city;
   celsiusTemperature = response.data.temperature.current;
@@ -114,3 +133,4 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 displayCity("New York");
+displayforecastElement();
