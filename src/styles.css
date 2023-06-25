@@ -4,6 +4,7 @@ body {
     rgb(66, 255, 132) -0.8%,
     rgb(124, 216, 255) 99%
   );
+  text-align: center;
 }
 
 .search {
@@ -25,15 +26,6 @@ p {
 
 li {
   list-style: none;
-}
-
-.search-temperature.active {
-  color: black;
-  cursor: none;
-}
-
-.search-temperature.active :hover {
-  text-decoration: none;
 }
 
 .sun {
