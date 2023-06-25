@@ -98,7 +98,7 @@ function showTemperature(response) {
 
 function displayCity(city) {
   let apikey = "0f9184c6bbbd99ef0f03atcoa48342a8";
-  let apiurl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apikey}&units=imperial`;
+  let apiurl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apikey}&units=metric`;
   axios.get(apiurl).then(showTemperature);
 }
 
@@ -110,7 +110,7 @@ function handleSubmit(event) {
 
 function currentPosition(coordinates) {
   let apikey = "0f9184c6bbbd99ef0f03atcoa48342a8";
-  let apiurl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apikey}&units=imperial`;
+  let apiurl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apikey}&units=metric`;
   axios.get(apiurl).then(showTemperature);
 }
 
@@ -119,35 +119,10 @@ function locationTemperature(event) {
   navigator.geolocation.locationTemperature(currentPosition);
 }
 
-function displayFaherenheitTemperature(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temperature");
-  faherenheitLink.classList.add("active");
-  celsiusTemperature.classList.remove("active");
-  let faherenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperature.innerHTML = Math.round(faherenheitTemperature);
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temperature");
-  celsiusLink.classList.add("active");
-  faherenheitLink.classList.remove("active");
-  temperature.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
-
 let searchform = document.querySelector("#search-form");
 searchform.addEventListener("submit", handleSubmit);
 
 let currentButton = document.querySelector("#current-location-button");
 currentButton.addEventListener("click", currentPosition);
-
-let faherenheitLink = document.querySelector("#faherentheit");
-faherenheitLink.addEventListener("click", displayFaherenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 displayCity("New York");
