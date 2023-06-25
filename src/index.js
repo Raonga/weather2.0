@@ -1,6 +1,13 @@
-function formatDate(date) {
-  let now = new Date(date);
-
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 0) {
+    hours`0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 0) {
+    minutes`0${minutes}`;
+  }
   let days = [
     "Sunday",
     "Monday",
@@ -10,32 +17,16 @@ function formatDate(date) {
     "Friday",
     "Saturday",
   ];
-  let months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  let currentDay = days[now.getDay()];
-  let currentMonth = months[now.getMonth()];
-  let currentHour = now.getHours();
-  let currentMinutes = now.getMinutes();
-  let currentYear = now.getFullYear();
-  let currentDate = now.getDate();
-
-  return `${currentDay}, ${currentDate}, ${currentMonth}, ${currentYear}, ${currentHour}; ${currentMinutes}`;
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
 }
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-formatDate(new Date());
+  return days[day];
+}
 
 function displayForecast(response) {
   let forecast = response.data.daily;
