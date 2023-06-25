@@ -91,7 +91,7 @@ function showTemperature(response) {
   document.querySelector("#humidity").innerHTML =
     response.data.temperature.humidity;
   document.querySelector("#date").innerHTML = formatDate(
-    response.data.time * 1000
+    response.data.dt * 1000
   );
   getForecast(response.data.coords);
 }
