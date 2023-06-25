@@ -93,7 +93,7 @@ function showTemperature(response) {
   document.querySelector("#date").innerHTML = formatDate(
     response.data.time * 1000
   );
-  getForecast(response.data.forecast);
+  getForecast(response.data.coords);
 }
 
 function displayCity(city) {
@@ -108,7 +108,7 @@ function handleSubmit(event) {
   displayCity(newcity);
 }
 
-function currentPosition(response) {
+function currentPosition(coordinates) {
   let apikey = "0f9184c6bbbd99ef0f03atcoa48342a8";
   let apiurl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apikey}&units=imperial`;
   axios.get(apiurl).then(showTemperature);
