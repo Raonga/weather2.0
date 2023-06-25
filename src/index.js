@@ -55,7 +55,7 @@ function displayForecast(response) {
                   forecastDay.dt * 1000
                 )}</div>
                 <img
-                  src="https://openweathermap.org/img/wn/${
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"${
                     forecastDay.weather[0].icon
                   }@2x.png"
                   alt=""
