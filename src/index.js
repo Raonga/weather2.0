@@ -110,7 +110,7 @@ function handleSubmit(event) {
 
 function currentPosition(response) {
   let apikey = "0f9184c6bbbd99ef0f03atcoa48342a8";
-  let apiurl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apikey}&units=metric`;
+  let apiurl = `https://api.shecodes.io/weather/v1/current?lon=${response.lon}&lat=${response.lat}&key=${apikey}&units=metric`;
   axios.get(apiurl).then(showTemperature);
 }
 
