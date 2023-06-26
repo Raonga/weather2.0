@@ -34,7 +34,6 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
@@ -43,21 +42,21 @@ function displayForecast(response) {
         `
               <div class="col-2">
                 <div class="weather-forecast-date">${formatDay(
-                  forecastDay.dt * 1000
+                  forecastDay.time * 1000
                 )}</div>
                 <img
-                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"${
-                    forecastDay.weather[0].icon
-                  }@2x.png"
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                    forecastDay.condition.icon
+                  }.png"
                   alt=""
                   width="42"
                 />
                 <div class="weather-forecast-temperatures">
                   <span class="weather-forecast-temperature-max">${Math.round(
-                    forecastDay.temp.max
+                    forecastDay.temperature.maximum
                   )}°</span>
                   <span class="weather-forecast-temperature-min">${Math.round(
-                    forecastDay.temp.min
+                    forecastDay.temperature.minimum
                   )}°</span>
                 </div>
               </div>
@@ -66,11 +65,6 @@ function displayForecast(response) {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-}
-function getForecast(coordinates) {
-  let apiKey = "0f9184c6bbbd99ef0f03atcoa48342a8";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayForecast);
 }
 
 function showTemperature(response) {
@@ -93,7 +87,7 @@ function showTemperature(response) {
   document.querySelector("#date").innerHTML = formatDate(
     response.data.time * 1000
   );
-  getForecast(response.data.coords);
+  getForecast(response.data.coordinates);
 }
 
 function displayCity(city) {
