@@ -67,6 +67,12 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  let apiKey = "0f9184c6bbbd99ef0f03atcoa48342a8";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showTemperature(response) {
   document.querySelector("#newcity").innerHTML = response.data.city;
   celsiusTemperature = response.data.temperature.current;
