@@ -43,3 +43,7 @@ li {
 .sunny {
   font-size: 50px;
 }
+
+.weather-forecast-col-2 {
+  column-width: auto;
+}
