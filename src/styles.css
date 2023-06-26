@@ -28,22 +28,6 @@ li {
   list-style: none;
 }
 
-.sun {
-  font-size: 120px;
-}
-
-.sunn {
-  font-size: 50px;
-}
-
-.cloudy {
-  font-size: 50px;
-}
-
-.sunny {
-  font-size: 50px;
-}
-
-.weather-forecast-col-2 {
-  column-width: 60px;
+.weather-forecast {
+  font-size: 8px;
 }
