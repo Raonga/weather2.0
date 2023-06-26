@@ -45,5 +45,5 @@ li {
 }
 
 .weather-forecast-col-2 {
-  column-width: auto;
+  column-width: 60px;
 }
